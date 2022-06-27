@@ -1,0 +1,538 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "inter";
+}
+
+/* variables */
+:root {
+    --maincolor: #f50;
+}
+
+@font-face {
+    src: url(../fonts/LucidaGrande.ttf);
+    font-family: luci;
+}
+
+@font-face {
+    src: url(../fonts/Interstate-light.ttf);
+    font-family: inter;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: "inter", "luci";
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: "inter", "luci";
+}
+
+.container {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* common */
+
+/* home + nav */
+
+section.home {
+    background-color: transparent;
+    background: url(../images/home.jpg)
+    55%/cover no-repeat;
+}
+
+section.home header .top-line {
+    width: 100%;
+    height: 5px;
+    background-color: var(--maincolor);
+}
+
+section.home header main {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.home header .logo {
+    margin: 15px 30px;
+    display: flex;
+    flex-basis: 57%;
+    align-items: center;
+}
+
+section.home header i {
+    font-size: 40px;
+    color: #fff;
+}
+
+section.home header .logo h2 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: default;
+    margin-left: 5px;
+}
+
+section.home header .nav {
+    display: flex;
+    width: 42%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 10px;
+}
+
+section.home header .nav .nav-items li {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+section.home header .nav .nav-items li .nav-btn {
+    padding: 7px 18px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+}
+
+section.home header .nav .nav-items li .sign-btn {
+    border: 1px solid #ccc;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+section.home header .nav .nav-items li .sign-btn:hover {
+    border: 1px solid #fff;
+}
+
+section.home header .nav .nav-items li .create-btn {
+    background-color: var(--maincolor);
+    border: none;
+}
+
+section.home header .nav .nav-items li .creators-btn {
+    background: transparent;
+    border: none;
+    padding: 7px 5px;
+}
+
+section.home main.home-content {
+    margin-top: 80px;
+    text-align: center;
+}
+
+section.home main.home-content h1 {
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-size: 34px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+section.home main.home-content p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+section.home main.home-content .home-btn {
+    border: none;
+    background-color: var(--maincolor);
+    font-size: 18px;
+    color: #fff;
+    padding: 15px 50px;
+    border-radius: 3px;
+    margin-bottom: 120px;
+    cursor: pointer;
+}
+
+/* About */
+
+section.about {
+    background-color: #fff;
+    padding: 60px 30px 30px 30px ;
+}
+
+section.about .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+section.about .search input {
+    width: 100%;
+    border: none;
+    height: 45px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+section.about .search input::placeholder {
+    color: #666;
+}
+
+section.about .search input:focus {
+    outline: none;
+    color: #666;
+}
+
+section.about .search .search-bar {
+    position: relative;
+    width: 75%;
+}
+
+section.about .search .search-btn {
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 45px;
+    background-color: transparent;
+    position: absolute;
+    top: 5%;
+    left: 93%;
+}
+
+section.about .search .upload {
+    width: 23%;
+}
+
+section.about .search .upload span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+section.about .search .upload .upload-btn {
+    border: none;
+    background-color: var(--maincolor);
+    color: #fff;
+    border-radius: 3px;
+    padding: 15px 20px;
+    word-spacing: 1.5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+section.about header {
+    margin-bottom: 40px;
+}
+
+section.about header h2 {
+    text-align: center;
+    font-weight: lighter;
+}
+
+section.about main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section.about main .about-item {
+    width: calc(100% / 6 - 20px);
+    margin-bottom: 15px;
+}
+
+section.about main .about-item .about-img {
+    position: relative;
+}
+
+section.about main .about-item .about-img .vid-hov {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+section.about main .about-item .about-img:hover .vid-hov {
+    visibility: visible;
+    opacity: 1;
+}
+
+section.about main .about-item .about-img button {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    background-color: var(--maincolor);
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    left: 45px;
+}
+
+section.about main .about-item .about-img button:hover {
+    background-color: #f30;
+}
+
+section.about main .about-item .about-img button i {
+    transform: rotate(45deg);
+}
+
+section.about main .about-item .about-img .vid-hov-info {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+}
+
+section.about main .about-item .about-img a i {
+    color: #fff;
+    font-size: 14px;
+    margin: 5px;
+    top: 10px;
+    left: 20px;
+}
+
+section.about main .about-item .about-img img {
+    width: 100%;  
+}
+
+section.about main .about-item {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+section.about main .about-item > a {
+    color: #333;
+    transition: color 0.2s;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+section.about main .about-item > a:hover {
+    color: #000;
+}
+
+section.about main .about-item > a span {
+    font-size: 14px;
+    color: #999;
+    display: block;
+}
+
+section.about main .about-item > a span:hover {
+    color: #333;
+}
+
+.explore-btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: var(--maincolor);
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.download {
+    margin-top: 50px;
+}
+
+.download header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.download header .header-img {
+    width: calc(100% / 2 - 20px);
+    margin-top: 50px;
+}
+
+.download header .header-img img {
+    width: 100%;
+}
+
+.download header .header-info {
+
+}
+
+.download header .header-info h2 {
+    font-size: 34px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.download header .header-info span {
+    width: 70px;
+    height: 3px;
+    background-color: red;
+    display: block;
+    background-image: linear-gradient(90deg,#7d01a1,#f30 50%,#f50);
+    margin-bottom: 20px;
+}
+
+.download header .header-info p {
+    font-size: 26px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.download main {
+    background-image: url(../images/us2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    padding: 90px 70px 60px 70px;
+}
+
+.download main h2 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.download main p {
+    color: #fff;
+    font: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.download main button {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.download main button:hover {
+    border: 1px solid #fff;
+}
+
+.join {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.join header {
+
+}
+
+.join header h2 {
+    font-size: 34px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.join header > p {
+    font-size: 24px;
+}
+
+.join header .create-btn {
+    padding: 10px 25px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+    background-color: var(--maincolor);
+    margin: 20px auto;
+    display: block;
+}
+
+.join header .sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join header .sign-in p {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.join header .sign-in button {
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.join header .sign-in button:hover {
+    border-color: #ccc;
+}
+
+.join main {
+    margin-top: 80px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.join main .links {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.join main .links a {
+    font-size: 14px;
+    color: #ccc;
+    text-align: left;
+}
+
+.join main .links a:hover {
+    color: #999;
+}
+
+.join main > a {
+    color: #000;
+    font-size: 14px;
+}
+
+.join main > a > span {
+    color: blue;
+}
+
+.join main > a:hover span {
+    color: #000; 
+}
+
+footer {
+    text-align: center;
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+
+footer span {
+    font-size: 16px;
+    color: var(--maincolor);
+    font-weight: bold;
+}
